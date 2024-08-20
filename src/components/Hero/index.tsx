@@ -1,4 +1,5 @@
 import { HeroContainer, Slogan, Branding } from './styles'
+
 import logo from '../../assets/logo.png'
 
 const Hero = () => (
