@@ -1,10 +1,11 @@
 import { GlobalCSS } from './styles'
+import Banner from './components/Banner'
 
 function App() {
   return (
     <>
       <GlobalCSS />
-      <h1>eFood!</h1>
+      <Banner />
     </>
   )
 }
