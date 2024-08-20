@@ -1,28 +1,22 @@
 class Food {
   id: number
-  ProductTitle: string
-  ProductRate: number
-  ProductDetails: string
-  ProductPhoto: string
-  ProductCategories: string[]
-  ProductToLink: string
+  foodTitle: string
+  foodPhoto: string
+  foodDescription: string
+  foodPhotoAlt: string
 
   constructor(
     id: number,
-    ProductTitle: string,
-    ProductRate: number,
-    ProductDetails: string,
-    ProductPhoto: string,
-    ProductCategories: string[],
-    ProductToLink: string
+    foodTitle: string,
+    foodPhoto: string,
+    foodDescription: string,
+    foodPhotoAlt: string
   ) {
     this.id = id
-    this.ProductTitle = ProductTitle
-    this.ProductRate = ProductRate
-    this.ProductDetails = ProductDetails
-    this.ProductPhoto = ProductPhoto
-    this.ProductCategories = ProductCategories
-    this.ProductToLink = ProductToLink
+    this.foodTitle = foodTitle
+    this.foodPhoto = foodPhoto
+    this.foodDescription = foodDescription
+    this.foodPhotoAlt = foodPhotoAlt
   }
 }
 
