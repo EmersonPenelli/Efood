@@ -5,14 +5,28 @@ import Footer from '../../components/Footer'
 import FoodModel from '../../models/Food'
 import pizza from '../../assets/pizza.png'
 
-const foods: FoodModel[] = [
+interface Food extends FoodModel {
+  ProductTitle: string
+  ProductRate: number
+  ProductPhoto: string
+  ProductToLink: string
+  // Add any other missing properties here
+}
+
+const foods: Food[] = [
   {
     id: 1,
     foodTitle: 'Pizza Marguerita',
     foodDescription:
       'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
     foodPhoto: pizza,
-    foodPhotoAlt: 'Pizza marguerita'
+    foodPhotoAlt: 'Pizza marguerita',
+    ProductTitle: 'Pizza Marguerita',
+    ProductRate: 4.5,
+    ProductPhoto: pizza,
+    ProductToLink: '/pizza-marguerita',
+    ProductCategories: [],
+    ProductDetails: ''
   },
   {
     id: 2,
@@ -20,7 +34,13 @@ const foods: FoodModel[] = [
     foodDescription:
       'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
     foodPhoto: pizza,
-    foodPhotoAlt: 'Pizza marguerita'
+    foodPhotoAlt: 'Pizza marguerita',
+    ProductTitle: 'Pizza Marguerita',
+    ProductRate: 4.5,
+    ProductPhoto: pizza,
+    ProductToLink: '/pizza-marguerita',
+    ProductCategories: [],
+    ProductDetails: ''
   },
   {
     id: 3,
@@ -28,7 +48,13 @@ const foods: FoodModel[] = [
     foodDescription:
       'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
     foodPhoto: pizza,
-    foodPhotoAlt: 'Pizza marguerita'
+    foodPhotoAlt: 'Pizza marguerita',
+    ProductTitle: 'Pizza Marguerita',
+    ProductRate: 4.5,
+    ProductPhoto: pizza,
+    ProductToLink: '/pizza-marguerita',
+    ProductCategories: [],
+    ProductDetails: ''
   },
   {
     id: 4,
@@ -36,7 +62,13 @@ const foods: FoodModel[] = [
     foodDescription:
       'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
     foodPhoto: pizza,
-    foodPhotoAlt: 'Pizza marguerita'
+    foodPhotoAlt: 'Pizza marguerita',
+    ProductTitle: 'Pizza Marguerita',
+    ProductRate: 4.5,
+    ProductPhoto: pizza,
+    ProductToLink: '/pizza-marguerita',
+    ProductCategories: [],
+    ProductDetails: ''
   },
   {
     id: 5,
@@ -44,7 +76,13 @@ const foods: FoodModel[] = [
     foodDescription:
       'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
     foodPhoto: pizza,
-    foodPhotoAlt: 'Pizza marguerita'
+    foodPhotoAlt: 'Pizza marguerita',
+    ProductTitle: 'Pizza Marguerita',
+    ProductRate: 4.5,
+    ProductPhoto: pizza,
+    ProductToLink: '/pizza-marguerita',
+    ProductCategories: [],
+    ProductDetails: ''
   },
   {
     id: 6,
@@ -52,7 +90,13 @@ const foods: FoodModel[] = [
     foodDescription:
       'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
     foodPhoto: pizza,
-    foodPhotoAlt: 'Pizza marguerita'
+    foodPhotoAlt: 'Pizza marguerita',
+    ProductTitle: 'Pizza Marguerita',
+    ProductRate: 4.5,
+    ProductPhoto: pizza,
+    ProductToLink: '/pizza-marguerita',
+    ProductCategories: [],
+    ProductDetails: ''
   }
 ]
 

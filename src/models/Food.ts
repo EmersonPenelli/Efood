@@ -4,6 +4,15 @@ class Food {
   foodPhoto: string
   foodDescription: string
   foodPhotoAlt: string
+  ProductTitle = '' // Assign a default value or initialize the property
+
+  // ProductDetails: string
+  ProductRate = 0 // Remove type annotation for ProductRate
+
+  ProductPhoto = '' // Add initializer for ProductPhoto
+  ProductToLink = '' // Add initializer for ProductToLink
+  ProductCategories: string[] = [] // Add initializer for ProductCategories
+  ProductDetails = '' // Assign a default value or initialize the property
 
   constructor(
     id: number,

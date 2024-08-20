@@ -3,6 +3,7 @@ import { cores } from '../../styles'
 
 export const Card = styled.div`
   background-color: ${cores.branco};
+  border: solid 1px ${cores.vermelho};
   .ContainerTop {
     display: flex;
     justify-content: space-between;

@@ -8,9 +8,11 @@ type Props = {
 
 const Header = ({ itens = 0 }: Props) => (
   <HeaderStyle>
-    <LinkRestaurantes href="/">Restaurantes</LinkRestaurantes>
-    <Branding src={logo} alt="Logo do restaurante" />
-    <TextCart>{itens} produto(s) no carrinho</TextCart>
+    <div className="container">
+      <LinkRestaurantes href="/">Restaurantes</LinkRestaurantes>
+      <Branding src={logo} alt="Logo do restaurante" />
+      <TextCart>{itens} produto(s) no carrinho</TextCart>
+    </div>
   </HeaderStyle>
 )
 
