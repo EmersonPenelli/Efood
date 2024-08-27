@@ -1,43 +1,50 @@
-import FoodModel from '../../models/Food'
-import {
-  List,
-  Container,
-  CloseIcon,
-  ModalContent,
-  FoodDescription,
-  FoodImage,
-  FoodTitle,
-  Modal,
-  ModalContainer
-} from './styles'
-import Food from '../../components/Food'
-import pizza from '../../assets/pizza.png'
-import { AddCartButton } from '../Food/styles'
-import close from '../../assets/close 1.png'
 import { useState } from 'react'
+import Food from '../Food'
+import { AddCartButton } from '../Food/styles'
+import {
+  Container,
+  List,
+  Modal,
+  ModalContent,
+  FoodImage,
+  ModalContainer,
+  FoodTitle,
+  FoodDescription,
+  CloseIcon
+} from './styles'
+import FoodModel from '../../models/Food'
+import close from '../../assets/close 1.png'
 
 export type Props = {
   foods: FoodModel[]
 }
 
-const foodSelected: FoodModel = {
-  id: 1,
-  foodTitle: 'Pizza Marquerita',
-  foodDescription:
-    'A pizza Margherita é uma pizza clássica da culinária italiana, reconhecida por sua simplicidade e sabores inigualável. Ela é fit com uma base de massa fina e crocante, coberta com molho de tomate fresco, queijo mussarela de alta qualidade, manjericão fresco e azeite de oliva extra-virgem. A combinação de sabores é perfeita, com o molho de tomate suculento e ligeiramente ácido, o queijo derretido e cremoso e as folhas de manjericão frescas, que adicionam um toque de sabor herbáceo. É uma pizza simples, mas deliciosa, que agrada a todos os paladares e é uma ótima opção para qualquer ocasião.',
-  foodPhoto: pizza,
-  foodPhotoAlt: 'Pizza marguerita',
-  foodServe: 'de 2 a 3 pessoas',
-  foodPrice: 60.9
-}
 const FoodList = ({ foods }: Props) => {
   const [showModal, setShowModal] = useState(false)
+  const [foodTitle, setfoodTitle] = useState('')
+  const [foodDescription, setfoodDescription] = useState('')
+  const [foodPhoto, setfoodPhoto] = useState('')
+  const [foodPhotoAlt, setfoodPhotoAlt] = useState('')
+  const [foodServe, setfoodServe] = useState('')
+  const [foodPrice, setfoodPrice] = useState(0)
+
   return (
     <>
       <Container>
         <List>
           {foods.map((food) => (
-            <li key={food.id} onClick={() => setShowModal(true)}>
+            <li
+              key={food.id}
+              onClick={() => {
+                setShowModal(true)
+                setfoodTitle(food.foodTitle)
+                setfoodDescription(food.foodDescription)
+                setfoodServe(food.foodServe)
+                setfoodPrice(food.foodPrice)
+                setfoodPhotoAlt(food.foodPhotoAlt)
+                setfoodPhoto(food.foodPhoto)
+              }}
+            >
               <Food
                 key={food.id}
                 FoodPhoto={food.foodPhoto}
@@ -51,18 +58,15 @@ const FoodList = ({ foods }: Props) => {
       </Container>
       <Modal className={showModal ? 'visible' : ''}>
         <ModalContent>
-          <FoodImage
-            src={foodSelected.foodPhoto}
-            alt={foodSelected.foodPhotoAlt}
-          />
+          <FoodImage src={foodPhoto} alt={foodPhotoAlt} />
           <ModalContainer>
-            <FoodTitle>{foodSelected.foodTitle}</FoodTitle>
+            <FoodTitle>{foodTitle}</FoodTitle>
             <FoodDescription>
-              {foodSelected.foodDescription}
-              <p>Serve: {foodSelected.foodServe}</p>
+              {foodDescription}
+              <p>Serve: {foodServe}</p>
             </FoodDescription>
             <AddCartButton to={''}>
-              Adicionar ao carrinho - R$ {foodSelected.foodPrice}
+              Adicionar ao carrinho - R$ {foodPrice}
             </AddCartButton>
           </ModalContainer>
           <CloseIcon

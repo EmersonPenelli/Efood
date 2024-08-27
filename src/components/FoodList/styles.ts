@@ -88,4 +88,5 @@ export const CloseIcon = styled.img`
   max-height: 16px;
   width: 100%;
   margin: 8px;
+  cursor: pointer;
 `

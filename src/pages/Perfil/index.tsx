@@ -73,17 +73,20 @@ const restaurantData = {
   type: 'Italiana',
   name: 'La Dolce Vita Trattoria'
 }
-const Perfil = () => (
-  <>
-    <Header itens={0} />
-    <Apresentacao
-      type={restaurantData.type}
-      name={restaurantData.name}
-      image={capa}
-    />
-    <FoodList foods={foods} />
-    <Footer />
-  </>
-)
+
+const Perfil = () => {
+  return (
+    <>
+      <Header itens={0} />
+      <Apresentacao
+        type={restaurantData.type}
+        name={restaurantData.name}
+        image={capa}
+      />
+      <FoodList foods={foods} />
+      <Footer />
+    </>
+  )
+}
 
 export default Perfil
