@@ -17,7 +17,7 @@ const Food = ({
     <Photo src={FoodPhoto} alt={FoodPhotoAlt} />
     <Title>{FoodTitle}</Title>
     <Description>{FoodDescription}</Description>
-    <AddCartButton>Adicionar ao carrinho</AddCartButton>
+    <AddCartButton to={'/food/2'}>Adicionar ao carrinho</AddCartButton>
   </Card>
 )
 
