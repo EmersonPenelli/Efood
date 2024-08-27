@@ -3,11 +3,17 @@ import {
   ApresentacaoCategoria,
   ApresentacaoPrato
 } from './styles'
-const Apresentacao = () => (
-  <ApresentacaoContainer>
+
+export type Props = {
+  type: string
+  name: string
+  image: string
+}
+const Apresentacao = ({ type, name, image }: Props) => (
+  <ApresentacaoContainer style={{ backgroundImage: `url(${image})` }}>
     <div className="container">
-      <ApresentacaoCategoria>Italiana</ApresentacaoCategoria>
-      <ApresentacaoPrato>La Dolce Vita Trattoria</ApresentacaoPrato>
+      <ApresentacaoCategoria>{type}</ApresentacaoCategoria>
+      <ApresentacaoPrato>{name}</ApresentacaoPrato>
     </div>
   </ApresentacaoContainer>
 )

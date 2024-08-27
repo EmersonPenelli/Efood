@@ -31,7 +31,8 @@ export const AddCartButton = styled(Link)`
   border: none;
   padding: 4px 7px;
   margin: 8px;
-  font-weight: bold;
+  font-weight: 700;
   text-decoration: none;
   text-align: center;
+  font-size: 14px;
 `

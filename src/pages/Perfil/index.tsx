@@ -4,15 +4,18 @@ import FoodList from '../../components/FoodList'
 import Footer from '../../components/Footer'
 import FoodModel from '../../models/Food'
 import pizza from '../../assets/pizza.png'
+import capa from '../../assets/apresentacao-fundo.png'
 
 const foods: FoodModel[] = [
   {
     id: 1,
-    foodTitle: 'Pizza Marguerita',
+    foodTitle: 'Pizza Marquerita',
     foodDescription:
       'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
     foodPhoto: pizza,
-    foodPhotoAlt: 'Pizza marguerita'
+    foodPhotoAlt: 'Pizza marguerita',
+    foodServe: 'de 2 a 3 pessoas',
+    foodPrice: 60.9
   },
   {
     id: 2,
@@ -20,7 +23,9 @@ const foods: FoodModel[] = [
     foodDescription:
       'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
     foodPhoto: pizza,
-    foodPhotoAlt: 'Pizza marguerita'
+    foodPhotoAlt: 'Pizza marguerita',
+    foodServe: '',
+    foodPrice: 0
   },
   {
     id: 3,
@@ -28,7 +33,9 @@ const foods: FoodModel[] = [
     foodDescription:
       'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
     foodPhoto: pizza,
-    foodPhotoAlt: 'Pizza marguerita'
+    foodPhotoAlt: 'Pizza marguerita',
+    foodServe: '',
+    foodPrice: 0
   },
   {
     id: 4,
@@ -36,7 +43,9 @@ const foods: FoodModel[] = [
     foodDescription:
       'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
     foodPhoto: pizza,
-    foodPhotoAlt: 'Pizza marguerita'
+    foodPhotoAlt: 'Pizza marguerita',
+    foodServe: '',
+    foodPrice: 0
   },
   {
     id: 5,
@@ -44,7 +53,9 @@ const foods: FoodModel[] = [
     foodDescription:
       'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
     foodPhoto: pizza,
-    foodPhotoAlt: 'Pizza marguerita'
+    foodPhotoAlt: 'Pizza marguerita',
+    foodServe: '',
+    foodPrice: 0
   },
   {
     id: 6,
@@ -52,14 +63,24 @@ const foods: FoodModel[] = [
     foodDescription:
       'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
     foodPhoto: pizza,
-    foodPhotoAlt: 'Pizza marguerita'
+    foodPhotoAlt: 'Pizza marguerita',
+    foodServe: '',
+    foodPrice: 0
   }
 ]
 
+const restaurantData = {
+  type: 'Italiana',
+  name: 'La Dolce Vita Trattoria'
+}
 const Perfil = () => (
   <>
     <Header itens={0} />
-    <Apresentacao />
+    <Apresentacao
+      type={restaurantData.type}
+      name={restaurantData.name}
+      image={capa}
+    />
     <FoodList foods={foods} />
     <Footer />
   </>

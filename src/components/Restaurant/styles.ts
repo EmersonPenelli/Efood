@@ -9,6 +9,9 @@ export const Card = styled.div`
     justify-content: space-between;
   }
   position: relative;
+  img {
+    width: 100%;
+  }
 `
 export const Title = styled.h3`
   font-size: 18px;
