@@ -1,12 +1,17 @@
-Neste exercício você deve:
+A entrega deste exercício consiste em:
 
----- Onde parei: Construa as páginas ----
+1) Utilizar como base esse layout: https://www.figma.com/file/JjduV2Tg713TzYUUsees8b/efood?type=design&node-id=0-1&mode=design;
 
-1) Utilizar como base o layout disponível no link https://www.figma.com/file/JjduV2Tg713TzYUUsees8b/efood?type=design&node-id=0-1&mode=design&t=fWWekknoLsPfkJ5n-0;
+2) Criar a modal utilizada ao clicar em comprar o produto e preencher o conteúdo do site por AJAX utilizando essa API https://fake-api-tau.vercel.app/api/efood/restaurantes
 
+3) Suba as alterações no repositório.
 
-4) Utilizar como biblioteca o React Router para a navegação entre páginas;
-5) Criar um novo repositório para o projeto;
-6) Subir as alterações no repositório;
-7) Criar um projeto na Vercel;
-8) Enviar o link do projeto publicado através da plataforma.
+4) Faça um novo deploy
+
+5) Envie o link do projeto na Vercel através da plataforma.
+
+## onde parei Componentize - Parte I
+
+API para ser utilizada nos exercícios
+https://fake-api-tau.vercel.app/api/efood/restaurantes
+https://fake-api-tau.vercel.app/api/efood/restaurantes/ID - ID vai do 1 ao 6
