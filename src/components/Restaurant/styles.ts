@@ -1,60 +1,47 @@
 import styled from 'styled-components'
 import { cores } from '../../styles'
-import { Link } from 'react-router-dom'
 
 export const Card = styled.div`
-  border: 1px solid ${cores.fontColor};
-  max-width: 472px;
-  width: 100%;
-  font-size: 14px;
-  overflow: hidden;
   background-color: ${cores.branco};
+  border: solid 1px ${cores.vermelho};
+
+  .ContainerTop {
+    display: flex;
+    justify-content: space-between;
+  }
   position: relative;
 `
-
-export const CardImage = styled.div`
+export const Photo = styled.img`
   width: 100%;
-  height: 250px;
-  overflow-y: hidden;
-
-  img {
-    width: 100%;
-  }
+  height: 217px;
+  object-fit: cover;
 `
-
-export const CardHeader = styled.div`
+export const Title = styled.h3`
   font-size: 18px;
-  display: flex;
-  justify-content: space-between;
-
-  div {
-    display: flex;
-
-    h3 {
-      margin-right: 8px;
-    }
-  }
-`
-
-export const CardInfos = styled.div`
-  padding: 8px;
-
-  p {
-    margin: 16px 0;
-  }
-`
-
-export const ButtonLink = styled(Link)`
-  color: ${cores.branco};
-  background-color: ${cores.fontColor};
-  text-decoration: none;
-  padding: 4px 6px;
-  color: ${cores.bgFooter};
   font-weight: bold;
+  margin-top: 8px;
+  margin-left: 8px;
 `
-
-export const Infos = styled.div`
+export const Description = styled.p`
+  font-size: 14px;
+  font-weight: regular;
+  margin-top: 8px;
+  margin-left: 8px;
+`
+export const Rate = styled.div`
+  h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 8px;
+    margin-right: 8px;
+  }
+  img {
+    margin-right: 8px;
+  }
+  display: flex;
+`
+export const Categories = styled.div`
   position: absolute;
-  top: 16px;
+  top: 0;
   right: 16px;
 `

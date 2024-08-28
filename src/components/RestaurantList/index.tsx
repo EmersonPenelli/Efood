@@ -1,26 +1,34 @@
-import { Restaurante } from '../../Pages/Home'
-import Restaurant from '../Restaurant'
-import { List } from './syles'
+import Product from '../Restaurant'
+import { Container, List } from './styles'
+import { Restaurant } from '../../pages/Home'
+import { useState } from 'react'
 
 export type Props = {
-  restaurantes: Restaurante[]
+  restaurants: Restaurant[]
 }
 
-const RestaurantList = ({ restaurantes }: Props) => {
+const ProductList = ({ restaurants }: Props) => {
+  const [destaque, setDestaque] = useState('Destaque da semana')
   return (
-    <List>
-      {restaurantes.map((restaurante) => (
-        <Restaurant
-          key={restaurante.id}
-          titulo={restaurante.titulo}
-          avaliacao={restaurante.avaliacao}
-          descricao={restaurante.descricao}
-          capa={restaurante.capa}
-          id={restaurante.id}
-        />
-      ))}
-    </List>
+    <Container>
+      <List>
+        {restaurants.map((restaurants) => (
+          <Product
+            key={restaurants.id}
+            RestaurantTitle={restaurants.titulo}
+            RestaurantRate={restaurants.avaliacao}
+            RestaurantDetails={restaurants.descricao}
+            RestaurantPhoto={restaurants.capa}
+            RestaurantCategories={[
+              restaurants.tipo,
+              restaurants.destacado ? destaque : ''
+            ]}
+            RestaurantToLink={`/restaurant/${restaurants.id}`}
+          />
+        ))}
+      </List>
+    </Container>
   )
 }
 
-export default RestaurantList
+export default ProductList
