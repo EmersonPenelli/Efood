@@ -1,12 +1,15 @@
+import React from 'react'
+import GlobalStyle, { Container } from './styles'
 import { BrowserRouter } from 'react-router-dom'
-import { GlobalCSS } from './styles'
 import Rotas from './routes'
 
 function App() {
   return (
     <BrowserRouter>
-      <GlobalCSS />
-      <Rotas />
+      <GlobalStyle />
+      <Container>
+        <Rotas />
+      </Container>
     </BrowserRouter>
   )
 }

@@ -1,22 +1,33 @@
-import logo from '../../assets/logo.png'
-import facebook from '../../assets/facebook-round-svgrepo-com 1.png'
-import instagram from '../../assets/instagram-round-svgrepo-com (1) 1.png'
-import twitter from '../../assets/twitter-2-svgrepo-com 1.png'
-import { FooterStyle, Branding, SocialMedia, Disclaimer } from './styles'
-
+import logo from '../../assets/images/logo.svg'
+import instagram from '../../assets/images/Instagram.svg'
+import meta from '../../assets/images/Meta.svg'
+import x from '../../assets/images/X.svg'
+import {
+  Logo,
+  Footer as FooterStyle,
+  List,
+  ListItem,
+  Copyrights
+} from './syles'
 const Footer = () => (
   <FooterStyle>
-    <Branding src={logo} alt="Logo do efood" />
-    <SocialMedia>
-      <img src={facebook} alt="" />
-      <img src={instagram} alt="" />
-      <img src={twitter} alt="" />
-    </SocialMedia>
-    <Disclaimer>
+    <Logo src={logo} alt="efood" />
+    <List>
+      <ListItem>
+        <img src={instagram} alt="" />
+      </ListItem>
+      <ListItem>
+        <img src={meta} alt="" />
+      </ListItem>
+      <ListItem>
+        <img src={x} alt="" />
+      </ListItem>
+    </List>
+    <Copyrights>
       A efood é uma plataforma para divulgação de estabelecimentos, a
       responsabilidade pela entrega, qualidade dos produtos é toda do
       estabelecimento contratado.
-    </Disclaimer>
+    </Copyrights>
   </FooterStyle>
 )
 
