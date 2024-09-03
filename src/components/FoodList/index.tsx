@@ -27,6 +27,12 @@ const FoodList = ({ restaurant }: Props) => {
   const [foodPhotoAlt, setfoodPhotoAlt] = useState('')
   const [foodServe, setfoodServe] = useState('')
   const [foodPrice, setfoodPrice] = useState(0)
+  const priceFormat = (price: number) => {
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    }).format(price)
+  }
 
   return (
     <>
@@ -66,7 +72,7 @@ const FoodList = ({ restaurant }: Props) => {
               <p>Serve: {foodServe}</p>
             </FoodDescription>
             <AddCartButton to={''}>
-              Adicionar ao carrinho - R$ {foodPrice}
+              Adicionar ao carrinho - {priceFormat(foodPrice)}
             </AddCartButton>
           </ModalContainer>
           <CloseIcon

@@ -58,6 +58,7 @@ export const FoodImage = styled.img`
   width: 280px;
   height: 280px;
   margin: 32px 24px 32px 32px;
+  object-fit: cover;
 `
 export const ModalContainer = styled.div`
   max-width: 656px;
