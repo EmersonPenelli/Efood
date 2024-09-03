@@ -38,6 +38,7 @@ export const AddCartButton = styled.button`
   font-size: 14px;
   display: block;
   width: 100%;
+  cursor: pointer;
 `
 
 export const Sidebar = styled.aside`

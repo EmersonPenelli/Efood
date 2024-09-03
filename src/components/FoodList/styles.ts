@@ -96,4 +96,5 @@ export const AddCartButton = styled.button`
   text-decoration: none;
   text-align: center;
   font-size: 14px;
+  cursor: pointer;
 `
