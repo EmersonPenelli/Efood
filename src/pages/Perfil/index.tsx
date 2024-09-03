@@ -8,7 +8,7 @@ import { useGetRestaurantSelectedQuery } from '../../services/api'
 
 const Perfil = () => {
   const { id } = useParams()
-  const { data: restaurantFood, isLoading } = useGetRestaurantSelectedQuery(id!)
+  const { data: restaurantFood } = useGetRestaurantSelectedQuery(id!)
 
   if (restaurantFood) {
     return (
