@@ -14,6 +14,7 @@ export const Overlay = styled.div`
 
 export const CartContainer = styled.div`
   position: fixed;
+
   top: 0;
   left: 0;
   width: 100%;
@@ -41,10 +42,11 @@ export const AddCartButton = styled.button`
 
 export const Sidebar = styled.aside`
   display: flex;
+  overflow-y: scroll;
   flex-direction: column;
   background-color: ${cores.vermelho};
   z-index: 1;
-  padding: 32px 8px 0 8px;
+  padding: 32px 8px 8px 8px;
   max-width: 360px;
   width: 100%;
   position: relative;
@@ -85,6 +87,7 @@ export const DeleteItemButton = styled.button`
   background-image: url(${removeIcon});
   background-color: transparent;
   border: none;
+  cursor: pointer;
 `
 export const InfosCart = styled.div`
   display: flex;

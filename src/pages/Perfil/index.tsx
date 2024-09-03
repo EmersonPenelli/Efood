@@ -14,9 +14,17 @@ const Perfil = () => {
   if (restaurantFood) {
     return (
       <>
-        <Header itens={0} />
+        <Header />
         <Apresentacao restaurant={restaurantFood} />
-        <FoodList restaurant={restaurantFood} />
+        <FoodList
+          restaurant={restaurantFood}
+          pedido={{
+            id: 0,
+            nome: '',
+            foto: '',
+            preco: 0
+          }}
+        />
         <Footer />
         <Cart />
       </>

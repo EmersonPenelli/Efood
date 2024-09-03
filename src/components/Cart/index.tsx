@@ -12,13 +12,23 @@ import {
   InfosCart
 } from './style'
 import { RootReducer } from '../../store'
-import { close } from '../../store/reducers/cart'
+import { close, removeItem } from '../../store/reducers/cart'
+import { priceFormat } from '../FoodList'
 
 const Cart = () => {
-  const { isOpen } = useSelector((state: RootReducer) => state.cart)
+  const { isOpen, pedido } = useSelector((state: RootReducer) => state.cart)
   const dispatch = useDispatch()
   const openCart = () => {
     dispatch(close())
+  }
+
+  const getTotalPrice = () => {
+    return pedido.reduce((acumulator, actualValue) => {
+      return (acumulator += actualValue.preco)
+    }, 0)
+  }
+  const remItem = (id: number) => {
+    dispatch(removeItem(id))
   }
   return (
     <CartContainer className={isOpen ? 'is-open' : ''}>
@@ -26,34 +36,20 @@ const Cart = () => {
       <Sidebar>
         <div>
           <ul>
-            <ItemCart>
-              <ImageItem src={pizza} alt="" />
-              <InfosItem>
-                <h3>Pizza Marguerita</h3>
-                <span>R$ 60,90</span>
-              </InfosItem>
-              <DeleteItemButton type="button" />
-            </ItemCart>
-            <ItemCart>
-              <ImageItem src={pizza} alt="" />
-              <InfosItem>
-                <h3>Pizza Marguerita</h3>
-                <span>R$ 60,90</span>
-              </InfosItem>
-              <DeleteItemButton type="button" />
-            </ItemCart>
-            <ItemCart>
-              <ImageItem src={pizza} alt="" />
-              <InfosItem>
-                <h3>Pizza Marguerita</h3>
-                <span>R$ 60,90</span>
-              </InfosItem>
-              <DeleteItemButton type="button" />
-            </ItemCart>
+            {pedido.map((p) => (
+              <ItemCart key={p.id}>
+                <ImageItem src={p.foto} alt="" />
+                <InfosItem>
+                  <h3>{p.nome}</h3>
+                  <span>{priceFormat(p.preco)}</span>
+                </InfosItem>
+                <DeleteItemButton type="button" onClick={() => remItem(p.id)} />
+              </ItemCart>
+            ))}
           </ul>
           <InfosCart>
             <p>Valor total</p>
-            <span>R$ 182,70</span>
+            <span>{priceFormat(getTotalPrice())}</span>
           </InfosCart>
           <AddCartButton>Continuar com a entrega</AddCartButton>
         </div>
