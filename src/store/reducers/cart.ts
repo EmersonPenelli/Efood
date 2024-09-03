@@ -1,12 +1,16 @@
-import { Restaurant } from './../../pages/Home/index'
+import { Restaurant, Food } from './../../pages/Home/index'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 type CartState = {
   items: Restaurant[]
+  food: Food[]
+  isOpen: boolean
 }
 
 const initialState: CartState = {
-  items: []
+  items: [],
+  food: [],
+  isOpen: false
 }
 
 const cartSlice = createSlice({
@@ -15,9 +19,18 @@ const cartSlice = createSlice({
   reducers: {
     add: (state, action: PayloadAction<Restaurant>) => {
       state.items.push(action.payload)
+    },
+    addFood: (state, action: PayloadAction<Food>) => {
+      state.food.push(action.payload)
+    },
+    open: (state) => {
+      state.isOpen = true
+    },
+    close: (state) => {
+      state.isOpen = false
     }
   }
 })
 
-export const { add } = cartSlice.actions
+export const { add, open, close, addFood } = cartSlice.actions
 export default cartSlice.reducer

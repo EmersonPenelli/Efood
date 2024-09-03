@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Food from '../Food'
-import { AddCartButton } from '../Food/styles'
+import { AddCartButton } from './styles'
 import {
   Container,
   List,
@@ -71,7 +71,7 @@ const FoodList = ({ restaurant }: Props) => {
               {foodDescription}
               <p>Serve: {foodServe}</p>
             </FoodDescription>
-            <AddCartButton to={''}>
+            <AddCartButton>
               Adicionar ao carrinho - {priceFormat(foodPrice)}
             </AddCartButton>
           </ModalContainer>

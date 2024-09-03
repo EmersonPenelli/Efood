@@ -23,6 +23,17 @@ export type Restaurant = {
   ]
 }
 
+export type Food = [
+  {
+    foto: string
+    preco: number
+    id: number
+    nome: string
+    descricao: string
+    porcao: string
+  }
+]
+
 const Home = () => {
   const { data: restaurants } = useGetRestaurantsQuery()
 
