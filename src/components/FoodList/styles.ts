@@ -25,6 +25,7 @@ export const Modal = styled.div`
   display: none;
   align-items: center;
   justiry-content: center;
+  z-index: 2;
 
   &.visible {
     display: flex;
@@ -47,7 +48,7 @@ export const ModalContent = styled.div`
   display: flex;
   flex-direction: row;
   position: relative;
-  z-index: 1;
+  z-index: 3;
 
   ${AddCartButton} {
     margin: 0;
