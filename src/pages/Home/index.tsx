@@ -6,16 +6,19 @@ import { useGetRestaurantsQuery } from '../../services/api'
 
 const Home = () => {
   const { data: restaurants } = useGetRestaurantsQuery()
+  const { data: restaurants } = useGetRestaurantsQuery()
 
-  if (restaurants) {
-    return (
-      <>
-        <Hero />
-        <RestaurantList restaurants={restaurants} />
-        <Footer />
-      </>
-    )
-  }
-  return <Loader />
+  useEffect(() => {
+    fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes')
+      .then((res) => res.json())
+      .then((res) => setRestaurants(res))
+  }, [])
+  return (
+    <>
+      <Hero />
+      <RestaurantList restaurants={restaurants} />
+      <Footer />
+    </>
+  )
 }
 export default Home

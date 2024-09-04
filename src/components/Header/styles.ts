@@ -1,13 +1,16 @@
 import styled from 'styled-components'
 import fundo from '../../assets/fundoHero.png'
 import { breakpoints, cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const HeaderStyle = styled.header`
   background-image: url(${fundo});
 
   align-items: center;
   text-align: center;
+  text-align: center;
   .container {
+    padding: 39px 0;
     padding: 39px 0;
     max-width: 1024px;
     display: flex;
@@ -27,6 +30,8 @@ export const HeaderStyle = styled.header`
   }
 `
 export const Branding = styled.img`
+  max-width: 125px;
+  width: 100%;
   max-width: 125px;
   width: 100%;
   height: 57.5px;
