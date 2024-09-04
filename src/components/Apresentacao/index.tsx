@@ -6,9 +6,6 @@ import {
 import { Restaurant } from '../../pages/Home'
 
 export type Props = {
-  // type: string
-  // name: string
-  // image: string
   restaurant: Restaurant
 }
 const Apresentacao = ({ restaurant }: Props) => (

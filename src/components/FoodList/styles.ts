@@ -1,12 +1,16 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
-import { AddCartButton } from '../Food/styles'
+import { breakpoints, cores } from '../../styles'
 
 export const Container = styled.div`
   max-width: 1024px;
   margin: 80px auto;
+
   li {
     list-style: none;
+  }
+
+  @media (max-width: ${breakpoints.desktop}) {
+    margin: 20px 10px;
   }
 `
 export const List = styled.ul`
@@ -14,6 +18,17 @@ export const List = styled.ul`
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 32px;
   row-gap: 32px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+  @media (max-width: ${breakpoints.mobile}) {
+    grid-template-columns: 1fr;
+    margin: 0 10px;
+    row-gap: 10px;
+  }
 `
 
 export const Modal = styled.div`
@@ -25,6 +40,7 @@ export const Modal = styled.div`
   display: none;
   align-items: center;
   justiry-content: center;
+  z-index: 2;
 
   &.visible {
     display: flex;
@@ -47,17 +63,22 @@ export const ModalContent = styled.div`
   display: flex;
   flex-direction: row;
   position: relative;
-  z-index: 1;
+  z-index: 3;
 
-  ${AddCartButton} {
-    margin: 0;
+  @media (max-width: ${breakpoints.tablet}) {
+    padding: 15px;
   }
 `
 export const FoodImage = styled.img`
   object-fit: cover;
-  width: 280px;
-  height: 280px;
+  max-width: 280px;
+  max-height: 280px;
   margin: 32px 24px 32px 32px;
+  object-fit: cover;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    display: none;
+  }
 `
 export const ModalContainer = styled.div`
   max-width: 656px;
@@ -88,5 +109,16 @@ export const CloseIcon = styled.img`
   max-height: 16px;
   width: 100%;
   margin: 8px;
+  cursor: pointer;
+`
+export const AddCartButton = styled.button`
+  background-color: ${cores.rosa};
+  color: ${cores.vermelho};
+  border: none;
+  padding: 4px 7px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  font-size: 14px;
   cursor: pointer;
 `
