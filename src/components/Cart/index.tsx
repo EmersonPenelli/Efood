@@ -25,7 +25,11 @@ const Cart = () => {
     dispatch(close())
   }
   const activeCheckout = () => {
-    dispatch(startCheckout())
+    if (getTotalPrice() > 0) {
+      dispatch(startCheckout())
+    } else {
+      alert('Não há itens no carrinho')
+    }
   }
 
   const getTotalPrice = () => {
@@ -36,7 +40,6 @@ const Cart = () => {
   const remItem = (id: number) => {
     dispatch(removeItem(id))
   }
-  console.log('isCart: ' + isCart)
   return (
     <CartContainer className={isOpen ? 'is-open' : ''}>
       <Overlay onClick={openCart} />
@@ -62,7 +65,7 @@ const Cart = () => {
             Continuar com a entrega
           </AddCartButton>
         </CartStage>
-        <Checkout checkoutStart={isAddress} />
+        <Checkout checkoutStart={isAddress} priceTotal={getTotalPrice()} />
       </Sidebar>
     </CartContainer>
   )
