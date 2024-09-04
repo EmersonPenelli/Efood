@@ -18,6 +18,7 @@ import { priceFormat } from '../FoodList'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { usePurchaseMutation } from '../../services/api'
+import { IMaskInput } from 'react-imask'
 
 type Props = {
   checkoutStart?: boolean
@@ -27,7 +28,7 @@ type Props = {
 const Checkout = ({ checkoutStart = false, priceTotal = 0 }: Props) => {
   const [purchase, { isSuccess, data }] = usePurchaseMutation()
 
-  const { isPayment, isConfirmed } = useSelector(
+  const { isPayment, isConfirmed, pedido } = useSelector(
     (state: RootReducer) => state.cart
   )
   const dispatch = useDispatch()
@@ -66,6 +67,7 @@ const Checkout = ({ checkoutStart = false, priceTotal = 0 }: Props) => {
     } else {
       alert('Preencha antes os dados obrigatórios!')
     }
+    console.log(pedido)
   }
 
   const form = useFormik({
@@ -191,8 +193,9 @@ const Checkout = ({ checkoutStart = false, priceTotal = 0 }: Props) => {
         <div className="CEPNumber">
           <Field>
             <label htmlFor="cep">CEP</label>
-            <input
-              type="number"
+            <IMaskInput
+              mask="00.000-000"
+              type="text"
               required
               id="cep"
               name="cep"
@@ -256,8 +259,9 @@ const Checkout = ({ checkoutStart = false, priceTotal = 0 }: Props) => {
         <div className="fieldContainer">
           <Field>
             <label htmlFor="cardNumber">Número do cartão</label>
-            <input
-              type="number"
+            <IMaskInput
+              mask="0000.0000.0000.0000"
+              type="text"
               required
               id="cardNumber"
               name="cardNumber"
@@ -271,8 +275,9 @@ const Checkout = ({ checkoutStart = false, priceTotal = 0 }: Props) => {
           </Field>
           <Field>
             <label htmlFor="cvv">CVV</label>
-            <input
-              type="number"
+            <IMaskInput
+              mask="000"
+              type="text"
               required
               id="cvv"
               name="cvv"
@@ -286,8 +291,9 @@ const Checkout = ({ checkoutStart = false, priceTotal = 0 }: Props) => {
         <div className="fieldContainer">
           <Field>
             <label htmlFor="mesVencimento">Mês de vencimento</label>
-            <input
-              type="number"
+            <IMaskInput
+              mask="00"
+              type="text"
               required
               id="mesVencimento"
               name="mesVencimento"
@@ -301,8 +307,9 @@ const Checkout = ({ checkoutStart = false, priceTotal = 0 }: Props) => {
           </Field>
           <Field>
             <label htmlFor="anoVencimento">Ano de vencimento</label>
-            <input
-              type="number"
+            <IMaskInput
+              mask="00"
+              type="text"
               required
               id="anoVencimento"
               name="anoVencimento"

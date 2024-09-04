@@ -1,6 +1,5 @@
 import Product from '../Restaurant'
 import { Container, List } from './styles'
-import { Restaurant } from '../../pages/Home'
 import { useState } from 'react'
 import Loader from '../Loader'
 
