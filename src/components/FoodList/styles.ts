@@ -4,11 +4,13 @@ import { breakpoints, cores } from '../../styles'
 export const Container = styled.div`
   max-width: 1024px;
   margin: 80px auto;
+
   li {
     list-style: none;
   }
-  @media (max-width: ${breakpoints.tablet}) {
-    margin: 20px auto;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    margin: 20px 10px;
   }
 `
 export const List = styled.ul`
@@ -19,7 +21,8 @@ export const List = styled.ul`
 
   @media (max-width: ${breakpoints.tablet}) {
     grid-template-columns: 1fr 1fr;
-    margin: 0 10px;
+    column-gap: 20px;
+    row-gap: 20px;
   }
   @media (max-width: ${breakpoints.mobile}) {
     grid-template-columns: 1fr;

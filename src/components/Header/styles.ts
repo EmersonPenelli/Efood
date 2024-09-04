@@ -14,12 +14,11 @@ export const HeaderStyle = styled.header`
     justify-content: space-between;
     margin: 0 auto;
 
-    @media (max-width: ${breakpoints.desktop}) {
-      padding: 39px 10px;
-    }
-
     @media (max-width: ${breakpoints.mobile}) {
       display: inline-block;
+    }
+    @media (max-width: ${breakpoints.desktop}) {
+      padding: 39px 10px;
     }
   }
 `
