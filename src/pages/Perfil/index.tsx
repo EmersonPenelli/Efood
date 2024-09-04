@@ -5,6 +5,7 @@ import FoodList from '../../components/FoodList'
 import Footer from '../../components/Footer'
 import { useGetRestaurantSelectedQuery } from '../../services/api'
 import Cart from '../../components/Cart'
+import Loader from '../../components/Loader'
 
 const Perfil = () => {
   const { id } = useParams()
@@ -29,7 +30,7 @@ const Perfil = () => {
       </>
     )
   }
-  return <h3>Loading...</h3>
+  return <Loader />
 }
 
 export default Perfil
