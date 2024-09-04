@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 import removeIcon from '../../assets/lixeira.png'
 
 export const Overlay = styled.div`
@@ -51,6 +51,9 @@ export const Sidebar = styled.aside`
   max-width: 360px;
   width: 100%;
   position: relative;
+  @media (max-width: ${breakpoints.tablet}) {
+    max-width: 220px;
+  }
 `
 export const ItemCart = styled.li`
   background-color: ${cores.rosa};
