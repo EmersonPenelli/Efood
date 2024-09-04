@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import Food from '../Food'
 import { AddCartButton } from './styles'
-import { AddCartButton } from './styles'
 import {
   Container,
   List,
@@ -27,17 +26,8 @@ export const priceFormat = (price: number) => {
     style: 'currency',
     currency: 'BRL'
   }).format(price)
-  pedido: Pedido
 }
 
-export const priceFormat = (price: number) => {
-  return new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL'
-  }).format(price)
-}
-
-const FoodList = ({ restaurant, pedido }: Props) => {
 const FoodList = ({ restaurant, pedido }: Props) => {
   const [showModal, setShowModal] = useState(false)
   const [foodTitle, setfoodTitle] = useState('')
@@ -46,18 +36,6 @@ const FoodList = ({ restaurant, pedido }: Props) => {
   const [foodPhotoAlt, setfoodPhotoAlt] = useState('')
   const [foodServe, setfoodServe] = useState('')
   const [foodPrice, setfoodPrice] = useState(0)
-  const [foodId, setFoodId] = useState(0)
-
-  const dispatch = useDispatch()
-  const addToCart = () => {
-    pedido.id = foodId
-    pedido.nome = foodTitle
-    pedido.foto = foodPhoto
-    pedido.preco = foodPrice
-    dispatch(addItem(pedido))
-    setShowModal(false)
-    dispatch(open())
-  }
   const [foodId, setFoodId] = useState(0)
 
   const dispatch = useDispatch()
@@ -87,7 +65,6 @@ const FoodList = ({ restaurant, pedido }: Props) => {
                 setfoodPhotoAlt(food.nome)
                 setfoodPhoto(food.foto)
                 setFoodId(food.id)
-                setFoodId(food.id)
               }}
             >
               <Food
@@ -110,8 +87,6 @@ const FoodList = ({ restaurant, pedido }: Props) => {
               {foodDescription}
               <p>Serve: {foodServe}</p>
             </FoodDescription>
-            <AddCartButton onClick={addToCart}>
-              Adicionar ao carrinho - {priceFormat(foodPrice)}
             <AddCartButton onClick={addToCart}>
               Adicionar ao carrinho - {priceFormat(foodPrice)}
             </AddCartButton>
