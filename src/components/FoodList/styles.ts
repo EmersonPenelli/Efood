@@ -61,6 +61,10 @@ export const ModalContent = styled.div`
   flex-direction: row;
   position: relative;
   z-index: 3;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    padding: 15px;
+  }
 `
 export const FoodImage = styled.img`
   object-fit: cover;
@@ -68,6 +72,10 @@ export const FoodImage = styled.img`
   max-height: 280px;
   margin: 32px 24px 32px 32px;
   object-fit: cover;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    display: none;
+  }
 `
 export const ModalContainer = styled.div`
   max-width: 656px;
